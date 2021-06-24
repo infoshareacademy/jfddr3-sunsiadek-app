@@ -1,13 +1,13 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import MenuIcon from '@material-ui/icons/Menu';
+import EmailIcon from '@material-ui/icons/Email';
+import NoteIcon from '@material-ui/icons/Note';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const StyledMenu = withStyles({
   paper: {
@@ -53,15 +53,13 @@ export default function CustomizedMenus() {
 
   return (
     <div>
-      <Button
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
-        color="primary"
-        onClick={handleClick}
-      >
-        Open Menu
-      </Button>
+      <MenuIcon
+      color="primary"
+      fontSize="large"
+      style={{ color: 'black'}}
+      onClick={handleClick} />
+    
+    
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
@@ -71,21 +69,21 @@ export default function CustomizedMenus() {
       >
         <StyledMenuItem>
           <ListItemIcon>
-            <SendIcon fontSize="small" />
+            <EmailIcon style={{ fontSize: 25}} />
           </ListItemIcon>
-          <ListItemText primary="Sent mail" />
+          <ListItemText primary="Messages" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <DraftsIcon fontSize="small" />
+            <NoteIcon style={{ fontSize: 25}} />
           </ListItemIcon>
-          <ListItemText primary="Drafts" />
+          <ListItemText primary="Adverts" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <InboxIcon fontSize="small" />
+            <ExitToAppIcon style={{ fontSize: 25}} />
           </ListItemIcon>
-          <ListItemText primary="Inbox" />
+          <ListItemText primary="Log out" />
         </StyledMenuItem>
       </StyledMenu>
     </div>
