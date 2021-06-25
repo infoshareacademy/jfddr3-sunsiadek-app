@@ -10,7 +10,7 @@
     "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
     "lint": "eslint src --ext=.js,.jsx,.ts,.tsx --fix",
     "lint:ci": "eslint src --ext=.js,.jsx,.ts,.tsx",
-    "format": "prettier 'src/**/*.{js,jsx,ts,tsx}' --write",
+    "format": "prettier \"src/**/*.{js,jsx,ts,tsx}\" --write",
     "format:ci": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
     "deploy": "gh-pages -d build",
     "prepare": "husky install"
