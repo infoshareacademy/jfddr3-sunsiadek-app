@@ -11,39 +11,39 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const StyledMenu = withStyles({
   paper: {
-    border: '1px solid #d3d4d5',
-  },
-})((props) => (
+    border: '1px solid #d3d4d5'
+  }
+})(props => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
       vertical: 'bottom',
-      horizontal: 'center',
+      horizontal: 'center'
     }}
     transformOrigin={{
       vertical: 'top',
-      horizontal: 'center',
+      horizontal: 'center'
     }}
     {...props}
   />
 ));
 
-const StyledMenuItem = withStyles((theme) => ({
+const StyledMenuItem = withStyles(theme => ({
   root: {
     '&:focus': {
       backgroundColor: theme.palette.primary.main,
       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
-    },
-  },
+        color: theme.palette.common.white
+      }
+    }
+  }
 }))(MenuItem);
 
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -54,12 +54,12 @@ export default function CustomizedMenus() {
   return (
     <div>
       <MenuIcon
-      color="primary"
-      fontSize="large"
-      style={{ color: 'black'}}
-      onClick={handleClick} />
-    
-    
+        color="primary"
+        fontSize="large"
+        style={{ color: 'black' }}
+        onClick={handleClick}
+      />
+
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
@@ -69,19 +69,19 @@ export default function CustomizedMenus() {
       >
         <StyledMenuItem>
           <ListItemIcon>
-            <EmailIcon style={{ fontSize: 25}} />
+            <EmailIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
           <ListItemText primary="Messages" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <NoteIcon style={{ fontSize: 25}} />
+            <NoteIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
           <ListItemText primary="Adverts" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <ExitToAppIcon style={{ fontSize: 25}} />
+            <ExitToAppIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
           <ListItemText primary="Log out" />
         </StyledMenuItem>
