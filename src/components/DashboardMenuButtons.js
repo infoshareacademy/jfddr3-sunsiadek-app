@@ -5,32 +5,32 @@ import Typography from '@material-ui/core/Typography';
 
 const images = [
   {
-    url: 'https://picsum.photos/id/637/200/300',
+    url: 'https://picsum.photos/id/637/800/400',
     title: 'Small fixes',
     width: '30%'
   },
   {
-    url: 'https://picsum.photos/id/237/200/300',
+    url: 'https://picsum.photos/id/237/800/400',
     title: 'Storage',
     width: '30%'
   },
   {
-    url: 'https://picsum.photos/id/27/200/300',
+    url: 'https://picsum.photos/id/27/800/400',
     title: 'Helper',
     width: '30%'
   },
   {
-    url: 'https://picsum.photos/id/23/200/300',
+    url: 'https://picsum.photos/id/23/800/400',
     title: 'Parking space',
     width: '30%'
   },
   {
-    url: 'https://picsum.photos/id/37/200/300',
+    url: 'https://picsum.photos/id/37/800/400',
     title: 'Events',
     width: '30%'
   },
   {
-    url: 'https://picsum.photos/seed/picsum/300/200',
+    url: 'https://picsum.photos/seed/picsum/800/400',
     title: 'Other',
     width: '30%'
   }
@@ -41,7 +41,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
-    width: '100%'
+    width: '100%',
+    justifyContent: 'center'
   },
   image: {
     position: 'relative',
