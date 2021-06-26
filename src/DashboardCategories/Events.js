@@ -4,7 +4,7 @@ import { DashboardMenuBox } from '../Styles/DashboardStyles';
 const Events = () => {
   return (
     <DashboardMenuBox>
-      <h3>Inne</h3>
+      <button>Inne</button>
     </DashboardMenuBox>
   );
 };

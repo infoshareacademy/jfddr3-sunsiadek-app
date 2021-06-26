@@ -4,7 +4,7 @@ import { DashboardMenuBox } from '../Styles/DashboardStyles';
 const SmallFixes = () => {
   return (
     <DashboardMenuBox>
-      <h3>Drobne naprawy</h3>
+      <button>Drobne naprawy</button>
     </DashboardMenuBox>
   );
 };

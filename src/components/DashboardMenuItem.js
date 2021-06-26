@@ -6,7 +6,7 @@ import SmallFixes from '../DashboardCategories/SmallFixes';
 import StorageSpace from '../DashboardCategories/StorageSpace';
 import Events from '../DashboardCategories/Events';
 import Helper from '../DashboardCategories/Helper';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 export const StyledDiv = styled.div`
   display: flex;

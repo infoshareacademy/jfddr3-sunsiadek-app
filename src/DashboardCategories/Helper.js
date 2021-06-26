@@ -4,7 +4,7 @@ import { DashboardMenuBox } from '../Styles/DashboardStyles';
 const Helper = () => {
   return (
     <DashboardMenuBox>
-      <h3>Pomoge</h3>
+      <button>Pomoge</button>
     </DashboardMenuBox>
   );
 };

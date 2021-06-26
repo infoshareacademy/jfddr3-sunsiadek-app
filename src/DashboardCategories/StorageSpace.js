@@ -4,7 +4,7 @@ import { DashboardMenuBox } from '../Styles/DashboardStyles';
 const StorageSpace = () => {
   return (
     <DashboardMenuBox>
-      <h3>Przechowam</h3>
+      <button>Przechowam</button>
     </DashboardMenuBox>
   );
 };

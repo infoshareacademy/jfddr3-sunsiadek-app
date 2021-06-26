@@ -4,7 +4,7 @@ import { DashboardMenuBox } from '../Styles/DashboardStyles';
 const ParkingSpace = () => {
   return (
     <DashboardMenuBox>
-      <h3>Miejsce parkingowe</h3>
+      <button>Miejsce parkingowe</button>
     </DashboardMenuBox>
   );
 };
