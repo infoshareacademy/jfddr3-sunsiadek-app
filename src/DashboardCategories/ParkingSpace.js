@@ -1,10 +1,10 @@
 import React from 'react';
 import { DashboardMenuBox } from '../Styles/DashboardStyles';
-
+import ButtonBases from '../components/DashboardMenuButtons';
 const ParkingSpace = () => {
   return (
     <DashboardMenuBox>
-      <button>Miejsce parkingowe</button>
+      <ButtonBases>Miejsce parkingowe</ButtonBases>
     </DashboardMenuBox>
   );
 };
