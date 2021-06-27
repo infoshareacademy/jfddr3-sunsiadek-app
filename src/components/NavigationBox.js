@@ -7,6 +7,7 @@ const NavBox = styled.div`
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +17,7 @@ export const NavigationBox = () => {
   return (
     <NavBox>
       <CustomizedMenus></CustomizedMenus>
-      <p>LOGO2</p>
+      <img src="../images/logo.png" />
     </NavBox>
   );
 };
