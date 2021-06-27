@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/jfddr3-sunsiadek-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/jfddr3-sunsiadek-app/static/js/main.6186e791.chunk.js",
-    "main.js.map": "/jfddr3-sunsiadek-app/static/js/main.6186e791.chunk.js.map",
-    "runtime-main.js": "/jfddr3-sunsiadek-app/static/js/runtime-main.cfb33c67.js",
-    "runtime-main.js.map": "/jfddr3-sunsiadek-app/static/js/runtime-main.cfb33c67.js.map",
-    "static/js/2.898103b0.chunk.js": "/jfddr3-sunsiadek-app/static/js/2.898103b0.chunk.js",
-    "static/js/2.898103b0.chunk.js.map": "/jfddr3-sunsiadek-app/static/js/2.898103b0.chunk.js.map",
-    "static/js/3.aea6d4cf.chunk.js": "/jfddr3-sunsiadek-app/static/js/3.aea6d4cf.chunk.js",
-    "static/js/3.aea6d4cf.chunk.js.map": "/jfddr3-sunsiadek-app/static/js/3.aea6d4cf.chunk.js.map",
+    "main.css": "/jfddr3-sunsiadek-app/static/css/main.4f624586.chunk.css",
+    "main.js": "/jfddr3-sunsiadek-app/static/js/main.51c64c6f.chunk.js",
+    "main.js.map": "/jfddr3-sunsiadek-app/static/js/main.51c64c6f.chunk.js.map",
+    "runtime-main.js": "/jfddr3-sunsiadek-app/static/js/runtime-main.9f3c2e31.js",
+    "runtime-main.js.map": "/jfddr3-sunsiadek-app/static/js/runtime-main.9f3c2e31.js.map",
+    "static/js/2.2766b286.chunk.js": "/jfddr3-sunsiadek-app/static/js/2.2766b286.chunk.js",
+    "static/js/2.2766b286.chunk.js.map": "/jfddr3-sunsiadek-app/static/js/2.2766b286.chunk.js.map",
+    "static/js/3.752b2c2c.chunk.js": "/jfddr3-sunsiadek-app/static/js/3.752b2c2c.chunk.js",
+    "static/js/3.752b2c2c.chunk.js.map": "/jfddr3-sunsiadek-app/static/js/3.752b2c2c.chunk.js.map",
     "index.html": "/jfddr3-sunsiadek-app/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/jfddr3-sunsiadek-app/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.898103b0.chunk.js.LICENSE.txt": "/jfddr3-sunsiadek-app/static/js/2.898103b0.chunk.js.LICENSE.txt"
+    "static/css/main.4f624586.chunk.css.map": "/jfddr3-sunsiadek-app/static/css/main.4f624586.chunk.css.map",
+    "static/js/2.2766b286.chunk.js.LICENSE.txt": "/jfddr3-sunsiadek-app/static/js/2.2766b286.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfb33c67.js",
-    "static/js/2.898103b0.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.6186e791.chunk.js"
+    "static/js/runtime-main.9f3c2e31.js",
+    "static/js/2.2766b286.chunk.js",
+    "static/css/main.4f624586.chunk.css",
+    "static/js/main.51c64c6f.chunk.js"
   ]
 }
