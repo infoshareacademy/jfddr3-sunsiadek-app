@@ -4,14 +4,14 @@
   "private": true,
   "homepage": "/jfddr3-sunsiadek-app/",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PUBLIC_URL=\".\" react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
     "lint": "eslint src --ext=.js,.jsx,.ts,.tsx --fix",
     "lint:ci": "eslint src --ext=.js,.jsx,.ts,.tsx",
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx}\" --write",
-    "format:ci": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:ci": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "deploy": "gh-pages -d build",
     "prepare": "husky install"
   },
@@ -58,6 +58,6 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write",
-    "*.{js,css}": "eslint --fix"
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }
