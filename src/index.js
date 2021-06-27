@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/jfddr3-sunsiadek-app">
       <Switch>
         <Route path="/login">
           <Login />
