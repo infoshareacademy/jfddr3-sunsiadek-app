@@ -1,12 +1,13 @@
 import React from 'react';
 import CustomizedMenus from '../../components/Menu';
 import ButtonBases from '../../components/DashboardMenuButtons';
+import { NavigationBox } from '../../components/NavigationBox';
 
 function Dashboard() {
   return (
     <div className="Dashboard">
-      <h1>Dashboard</h1>
-      <CustomizedMenus></CustomizedMenus>
+      {/* <CustomizedMenus></CustomizedMenus> */}
+      <NavigationBox></NavigationBox>
       <ButtonBases />
     </div>
   );
