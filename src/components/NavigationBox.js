@@ -16,7 +16,7 @@ export const NavigationBox = () => {
   return (
     <NavBox>
       <CustomizedMenus></CustomizedMenus>
-      <p>LOGO</p>
+      <p>LOGO2</p>
     </NavBox>
   );
 };
