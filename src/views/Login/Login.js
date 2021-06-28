@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   Box,
   Card,
-  TextareaAutosize,
+  TextField,
   Button,
   Avatar,
   Typography,
@@ -16,11 +16,6 @@ const StyledCard = styled(Card)`
   height: auto;
   width: 200px;
   margin: 10px auto;
-`;
-
-const StyledText = styled(TextareaAutosize)`
-  margin: auto;
-  width: 10px;
 `;
 
 const StyledButton = styled(Button)`
@@ -49,8 +44,8 @@ const Login = () => {
           <Typography variant="h6"> Log in</Typography>
         </Box>
         <form onSubmit={handleSubmit}>
-          <TextareaAutosize id="email" name="email" label="E-mail" />
-          <TextareaAutosize
+          <TextField id="email" name="email" label="E-mail" />
+          <TextField
             id="password"
             name="password"
             label="Password"
