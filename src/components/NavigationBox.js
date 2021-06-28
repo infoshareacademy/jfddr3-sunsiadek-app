@@ -16,8 +16,8 @@ const NavBox = styled.div`
 export const NavigationBox = () => {
   return (
     <NavBox>
+      <img src="./images/logo.png" width="45" alt="This is a logo" />
       <CustomizedMenus></CustomizedMenus>
-      <img src="../images/logo.png" />
     </NavBox>
   );
 };
