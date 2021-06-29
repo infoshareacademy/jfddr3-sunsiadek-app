@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import firebase from 'firebase';
+import { auth } from '../../firebase-config';
 
 const StyledCard = styled(Card)`
   padding: 10px;
@@ -29,17 +30,17 @@ const StyledAvatar = styled(Avatar)`
   background-color: gray;
 `;
 
-const Login = () => {
+const Register = () => {
   const handleSubmit = e => {
     e.preventDefault();
-    const emailLogin = e.target.email.value;
-    const passwordLogin = e.target.password.value;
+    const emailRegister = e.target.email.value;
+    const passwordRegister = e.target.password.value;
     firebase
       .auth()
-      .signInWithEmailAndPassword(emailLogin, passwordLogin)
+      .createUserWithEmailAndPassword(emailRegister, passwordRegister)
       .then(userCredential => {
-        var user = userCredential.user;
-        console.log('Zalogowano użytkownika: ' + user.email);
+        const user = userCredential.user;
+        console.log('Dodano użytkownika: ' + user.email);
       })
       .catch(error => console.error(error.message));
   };
@@ -51,7 +52,7 @@ const Login = () => {
           <StyledAvatar>
             <LockOpenOutlinedIcon />
           </StyledAvatar>
-          <Typography variant="h6"> Log in</Typography>
+          <Typography variant="h6"> Register</Typography>
         </Box>
         <form onSubmit={handleSubmit}>
           <TextField id="email" name="email" label="E-mail" />
@@ -63,7 +64,7 @@ const Login = () => {
           />
           <Box>
             <StyledButton type="submit" variant="contained" color="primary">
-              Log in
+              Register
             </StyledButton>
           </Box>
         </form>
@@ -72,4 +73,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -4,7 +4,7 @@ import './index.css';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import reportWebVitals from './reportWebVitals';
-
+import Register from './views/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 ReactDOM.render(
@@ -14,8 +14,11 @@ ReactDOM.render(
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Dashboard />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
       </Switch>
     </Router>
