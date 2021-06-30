@@ -12,7 +12,7 @@ export default function App() {
             <Dashboard />
             <Link to="/">Link to Login(for testonly)</Link>
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Login />
             <Link to="/dashboard">Link to Dashboard(for testonly)</Link>
           </Route>
