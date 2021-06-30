@@ -6,22 +6,25 @@ import Dashboard from './views/Dashboard';
 import reportWebVitals from './reportWebVitals';
 import Register from './views/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AuthProvider } from './AuthProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/jfddr3-sunsiadek-app">
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/">
-          <Dashboard />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-      </Switch>
-    </Router>
+    <AuthProvider>
+      <Router basename="/jfddr3-sunsiadek-app">
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+        </Switch>
+      </Router>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
