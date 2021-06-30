@@ -1,30 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './views/Login';
-import Dashboard from './views/Dashboard';
 import reportWebVitals from './reportWebVitals';
-import Register from './views/Register';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { AuthProvider } from './AuthProvider';
+import { BrowserRouter } from 'react-router-dom';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router basename="/jfddr3-sunsiadek-app">
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/">
-            <Dashboard />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-        </Switch>
-      </Router>
-    </AuthProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
