@@ -1,24 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './views/Login';
-import Dashboard from './views/Dashboard';
 import reportWebVitals from './reportWebVitals';
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/jfddr3-sunsiadek-app">
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/">
-          <Dashboard />
-        </Route>
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
