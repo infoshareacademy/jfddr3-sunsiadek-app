@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   Box,
@@ -6,11 +6,13 @@ import {
   TextField,
   Button,
   Avatar,
-  Typography,
-  Link
+  Typography
+  // Link
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
-import firebase from 'firebase';
+import { useAuth } from '../../context/AuthProvider';
+
+import { Link, useHistory } from 'react-router-dom';
 
 const StyledCard = styled(Card)`
   padding: 10px;
@@ -29,20 +31,25 @@ const StyledAvatar = styled(Avatar)`
   background-color: gray;
 `;
 
-const Login = () => {
-  const handleSubmit = e => {
+export default function Login() {
+  const { login } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const emailLogin = e.target.email.value;
-    const passwordLogin = e.target.password.value;
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(emailLogin, passwordLogin)
-      .then(userCredential => {
-        var user = userCredential.user;
-        console.log('Zalogowano użytkownika: ' + user.email);
-      })
-      .catch(error => console.error(error.message));
-  };
+
+    try {
+      setError('');
+      setLoading(true);
+      await login(e.target.email.value, e.target.password.value);
+      history.push('/');
+    } catch {
+      setError('Nie udało się zalogować');
+    }
+    setLoading(false);
+  }
 
   return (
     <Box align="center">
@@ -51,25 +58,39 @@ const Login = () => {
           <StyledAvatar>
             <LockOpenOutlinedIcon />
           </StyledAvatar>
-          <Typography variant="h6"> Log in</Typography>
+          <Typography variant="h6"> Login</Typography>
+          {error && <p>{error}</p>}
         </Box>
         <form onSubmit={handleSubmit}>
-          <TextField id="email" name="email" label="E-mail" />
+          <TextField
+            id="email"
+            type="email"
+            name="email"
+            label="E-mail"
+            required
+          />
           <TextField
             id="password"
             name="password"
             label="Password"
             type="password"
+            required
           />
           <Box>
-            <StyledButton type="submit" variant="contained" color="primary">
-              Log in
+            <StyledButton
+              disabled={loading}
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
+              Login
             </StyledButton>
+            <Typography>
+              Potrzebujesz konta? <Link to="/register">Sign Up</Link>
+            </Typography>
           </Box>
         </form>
       </StyledCard>
     </Box>
   );
-};
-
-export default Login;
+}

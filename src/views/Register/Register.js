@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   Box,
@@ -6,12 +6,14 @@ import {
   TextField,
   Button,
   Avatar,
-  Typography,
-  Link
+  Typography
+  // Link
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
-import firebase from 'firebase';
-import { auth } from '../../firebase-config';
+
+import { useAuth } from '../../context/AuthProvider';
+
+import { Link, useHistory } from 'react-router-dom';
 
 const StyledCard = styled(Card)`
   padding: 10px;
@@ -30,20 +32,29 @@ const StyledAvatar = styled(Avatar)`
   background-color: gray;
 `;
 
-const Register = () => {
-  const handleSubmit = e => {
+export default function Register() {
+  const { signUp } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const emailRegister = e.target.email.value;
-    const passwordRegister = e.target.password.value;
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(emailRegister, passwordRegister)
-      .then(userCredential => {
-        const user = userCredential.user;
-        console.log('Dodano użytkownika: ' + user.email);
-      })
-      .catch(error => console.error(error.message));
-  };
+
+    if (e.target.password.value !== e.target.passwordconfirm.value) {
+      return setError('Hasła nie są takie same');
+    }
+
+    try {
+      setError('');
+      setLoading(true);
+      await signUp(e.target.email.value, e.target.password.value);
+      history.push('/');
+    } catch {
+      setError('Nie udało się utworzyć konta');
+    }
+    setLoading(false);
+  }
 
   return (
     <Box align="center">
@@ -53,24 +64,44 @@ const Register = () => {
             <LockOpenOutlinedIcon />
           </StyledAvatar>
           <Typography variant="h6"> Register</Typography>
+          {error && <p>{error}</p>}
         </Box>
         <form onSubmit={handleSubmit}>
-          <TextField id="email" name="email" label="E-mail" />
+          <TextField
+            id="email"
+            type="email"
+            name="email"
+            label="E-mail"
+            required
+          />
           <TextField
             id="password"
             name="password"
             label="Password"
             type="password"
+            required
+          />
+          <TextField
+            id="passwordconfirm"
+            name="passwordconfirm"
+            label="Password Confirmation"
+            type="password"
           />
           <Box>
-            <StyledButton type="submit" variant="contained" color="primary">
+            <StyledButton
+              disabled={loading}
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
               Register
             </StyledButton>
+            <Typography>
+              Masz juz konto? <Link to="/login">Sign In</Link>
+            </Typography>
           </Box>
         </form>
       </StyledCard>
     </Box>
   );
-};
-
-export default Register;
+}
