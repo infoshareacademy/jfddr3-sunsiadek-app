@@ -14,7 +14,7 @@ function Dashboard() {
     <Switch>
       <div className="Dashboard">
         <NavigationBox></NavigationBox>
-        <Route path="/dashboard/Other">
+        <Route path="/dashboard/other">
           <Other />
         </Route>
         <Route path="/dashboard/events">
