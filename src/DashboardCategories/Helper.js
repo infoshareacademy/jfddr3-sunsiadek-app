@@ -1,12 +1,7 @@
 import React from 'react';
-import { DashboardMenuBox } from '../Styles/DashboardStyles';
 
 const Helper = () => {
-  return (
-    <DashboardMenuBox>
-      <button>Pomoge</button>
-    </DashboardMenuBox>
-  );
+  return <h1>Pomoge</h1>;
 };
 
 export default Helper;

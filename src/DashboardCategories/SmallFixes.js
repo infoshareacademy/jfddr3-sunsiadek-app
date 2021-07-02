@@ -1,12 +1,7 @@
 import React from 'react';
-import { DashboardMenuBox } from '../Styles/DashboardStyles';
 
 const SmallFixes = () => {
-  return (
-    <DashboardMenuBox>
-      <button>Drobne naprawy</button>
-    </DashboardMenuBox>
-  );
+  return <h1>small-fixes</h1>;
 };
 
 export default SmallFixes;

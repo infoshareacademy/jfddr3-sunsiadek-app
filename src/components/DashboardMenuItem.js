@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import ParkingSpace from '../DashboardCategories/ParkingSpace';
-import ShopBuyer from '../DashboardCategories/ShopBuyer';
+
 import SmallFixes from '../DashboardCategories/SmallFixes';
 import StorageSpace from '../DashboardCategories/StorageSpace';
 import Events from '../DashboardCategories/Events';
@@ -21,7 +21,7 @@ const DashboardMenuItem = () => {
       <Switch>
         <StyledDiv>
           <ParkingSpace />
-          <ShopBuyer />
+
           <SmallFixes />
           <StorageSpace />
           <Helper />
