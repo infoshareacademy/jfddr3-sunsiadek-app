@@ -18,7 +18,7 @@ export const ProfileNavBox = () => {
   return (
     <NavBox>
       <img src="./images/logo.png" width="45" alt="This is a logo" />
-      <ExitToAppIcon />
+      <ExitToAppIcon style={{ fontSize: 35 }} />
     </NavBox>
   );
 };
