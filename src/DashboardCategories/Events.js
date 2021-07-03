@@ -1,12 +1,7 @@
 import React from 'react';
-import { DashboardMenuBox } from '../Styles/DashboardStyles';
 
 const Events = () => {
-  return (
-    <DashboardMenuBox>
-      <button>Inne</button>
-    </DashboardMenuBox>
-  );
+  return <h1>Events</h1>;
 };
 
 export default Events;
