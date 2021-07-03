@@ -1,22 +1,34 @@
 import React from 'react';
 import { db } from '../../firebase-config';
+import firebase from 'firebase';
+import { useAuth } from '../../context/AuthProvider';
 
 export default function AddingAds() {
   const category = document.getElementById('category');
   const title = document.getElementById('title');
   const descriptions = document.getElementById('descriptions');
+  const myDateCreated = firebase.firestore.Timestamp.fromDate(new Date());
+  const { currentUser } = useAuth();
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    // // konwert daty na czytelny
+    // const myDateConvert = myDate.toDate();
+    // console.log(myDateConvert);
+
     const checkedGiveOrTake = document.querySelector(
       'input[name=give-take]:checked'
     ).value;
     const data = {
-      announcement: descriptions.value,
+      author: currentUser.email,
+      category: category.value,
+      title: title.value,
+      descriptions: descriptions.value,
       givetake: checkedGiveOrTake,
-      title: title.value
+      dateCreated: myDateCreated,
+      status: 'active'
     };
-    console.log(data);
     db.collection('announcements').add(data);
   }
 
@@ -44,7 +56,12 @@ export default function AddingAds() {
         </div>
         <div>
           <label for="descriptions">Opis</label>
-          <textarea required id="descriptions" name="descriptions"></textarea>
+          <textarea
+            style={{ height: 100, width: 400 }}
+            required
+            id="descriptions"
+            name="descriptions"
+          ></textarea>
         </div>
         <fieldset>
           <legend>Wybierz</legend>
@@ -66,3 +83,12 @@ export default function AddingAds() {
     </>
   );
 }
+
+// const date = new Date();
+// let h = date.getHours();
+// let m = date.getMinutes();
+// let s = date.getSeconds();
+// const date2 = new Date();
+// let day = date2.getDate();
+// let month = date2.getMonth() + 1;
+// let year = date2.getFullYear();
