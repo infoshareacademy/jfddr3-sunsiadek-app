@@ -2,7 +2,6 @@ import React from 'react';
 import { db } from '../../firebase-config';
 import firebase from 'firebase';
 import { useAuth } from '../../context/AuthProvider';
-
 export default function AddingAds() {
   const category = document.getElementById('category');
   const title = document.getElementById('title');

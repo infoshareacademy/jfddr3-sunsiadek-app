@@ -17,7 +17,7 @@ export default function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <PrivateRoute exact path="/">
+            <PrivateRoute exact path="/dashboard">
               <Dashboard />
             </PrivateRoute>
             <Route path="/register">
