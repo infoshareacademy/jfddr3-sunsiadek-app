@@ -14,7 +14,7 @@ export default function App() {
         <div>
           <Switch>
             {/* route umiescic - kategorie */}
-            <Route exact path="/login">
+            <Route exact path="/">
               <Login />
             </Route>
             <PrivateRoute exact path="/dashboard">

@@ -97,7 +97,7 @@ export default function Register() {
               Register
             </StyledButton>
             <Typography>
-              Masz juz konto? <Link to="/login">Sign In</Link>
+              Masz juz konto? <Link to="/">Sign In</Link>
             </Typography>
           </Box>
         </form>
