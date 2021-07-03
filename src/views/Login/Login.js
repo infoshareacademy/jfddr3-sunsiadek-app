@@ -46,7 +46,8 @@ export default function Login() {
       await login(e.target.email.value, e.target.password.value);
       history.push('/');
     } catch {
-      setError('Nie udało się zalogować');
+      setError('Nie udało się zalogowac');
+      // console.log(error);
     }
     setLoading(false);
   }

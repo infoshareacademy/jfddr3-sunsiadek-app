@@ -4,6 +4,8 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import Register from './views/Register';
 import { AuthProvider } from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute';
+import AddingAds from './views/AddingAds/AddingAds';
 
 export default function App() {
   return (
@@ -11,18 +13,18 @@ export default function App() {
       <AuthProvider>
         <div>
           <Switch>
+            {/* route umiescic - kategorie */}
             <Route exact path="/login">
               <Login />
-              <Link to="/">Link to Dashboard(for test only)</Link>
-              <Link to="/register">Link to Register(for test only)</Link>
             </Route>
-            <Route exact path="/">
+            <PrivateRoute exact path="/">
               <Dashboard />
-              <Link to="/login">Link to Login(for test only)</Link>
-            </Route>
+            </PrivateRoute>
             <Route path="/register">
               <Register />
-              <Link to="/login">Link to Login(for testonly)</Link>
+            </Route>
+            <Route path="/addingads">
+              <AddingAds />
             </Route>
           </Switch>
         </div>

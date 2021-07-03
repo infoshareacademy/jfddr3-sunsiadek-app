@@ -8,6 +8,13 @@ function Dashboard() {
   return (
     <div className="Dashboard">
       <NavigationBox></NavigationBox>
+      {/* opakowac calosc w router +
+       switch +
+       route - komponent ( parking )
+       route - komponent (events )
+       route */}
+      {/* tutaj umiescic zaleznosci sciezki */}
+
       <ButtonBases />
     </div>
   );
