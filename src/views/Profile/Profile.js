@@ -66,7 +66,14 @@ const ReferenceContainer = styled.div`
 `;
 
 const StyledAnchor = styled.a`
-  color: green;
+  color: #2e4053;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 1px solid #2e4053;
+  border-radius: 12px;
+  margin: 10px 0 60px 0;
+  width: 50%;
+  text-align: center;
 `;
 
 function Profile() {
@@ -99,8 +106,8 @@ function Profile() {
           </Description>
         </DescriptionArea>
         <ReferenceContainer>
-          <StyledAnchor>go to messeages</StyledAnchor>
-          <StyledAnchor>go to adverts</StyledAnchor>
+          <StyledAnchor>go to your messages...</StyledAnchor>
+          <StyledAnchor>go to your adverts...</StyledAnchor>
         </ReferenceContainer>
       </StyledApplication>
     </>
