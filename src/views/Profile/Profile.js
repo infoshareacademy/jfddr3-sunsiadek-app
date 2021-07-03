@@ -9,14 +9,6 @@ const StyledApplication = styled.div`
   background-color: #f2f3f4;
 `;
 
-const StyledProfile = styled.div`
-  width: 90%;
-  margin: 10px;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`;
-
 const DescriptionArea = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,10 +22,19 @@ const DescriptionArea = styled.div`
 `;
 
 const Description = styled.div`
-  height: 180px;
-  width: 60%;
-  overflow: auto;
+  height: 350px;
+  width: 100%;
   padding: 7px;
+  display: flex;
+`;
+
+const Form = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const PhotoContainer = styled.div`
@@ -54,8 +55,18 @@ const MockPhoto = styled.div`
 `;
 
 const ReferenceContainer = styled.div`
-  background-color: red;
-  height: 100px;
+  height: 220px;
+  width: 90%;
+  margin: 10px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledAnchor = styled.a`
+  color: green;
 `;
 
 function Profile() {
@@ -71,20 +82,12 @@ function Profile() {
               edit
             </Button>
           </PhotoContainer>
-          <Description>user description</Description>
-        </DescriptionArea>
-
-        <StyledProfile>
-          <div className="Profile">
-            <form>
+          <Description>
+            <Form>
               <TextField id="standard-basic" label="Name" />
-              <TextField id="standard-basic" label="Surname" />
-              <TextField id="standard-basic" label="Age" />
-              <TextField id="standard-basic" label="Phone number" />
-              <TextField id="standard-basic" label="City" />
               <TextField
                 id="standard-multiline-static"
-                label="description"
+                label="Description"
                 multiline
                 rows={4}
                 defaultValue=""
@@ -92,10 +95,13 @@ function Profile() {
               <Button variant="outlined" color="primary">
                 Save
               </Button>
-            </form>
-          </div>
-        </StyledProfile>
-        <ReferenceContainer>blabla</ReferenceContainer>
+            </Form>
+          </Description>
+        </DescriptionArea>
+        <ReferenceContainer>
+          <StyledAnchor>go to messeages</StyledAnchor>
+          <StyledAnchor>go to adverts</StyledAnchor>
+        </ReferenceContainer>
       </StyledApplication>
     </>
   );
