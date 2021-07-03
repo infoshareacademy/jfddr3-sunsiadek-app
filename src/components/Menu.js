@@ -46,7 +46,7 @@ const StyledMenuItem = withStyles(theme => ({
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const [setError] = useState('');
+  const [error, setError] = useState('');
   const { logout } = useAuth();
   const history = useHistory();
 
@@ -66,6 +66,7 @@ export default function CustomizedMenus() {
       history.push('');
     } catch {
       setError('Nie udało się wylogować');
+      console.lgo(error);
     }
   }
 
