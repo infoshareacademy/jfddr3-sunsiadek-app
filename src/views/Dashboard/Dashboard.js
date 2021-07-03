@@ -10,7 +10,7 @@ import Events from '../../DashboardCategories/Events';
 import Other from '../../DashboardCategories/Other';
 
 function Dashboard() {
-  const [userLog, setUserLog] = useState(null);
+  // const [userLog, setUserLog] = useState(null);
 
   return (
     <Switch>

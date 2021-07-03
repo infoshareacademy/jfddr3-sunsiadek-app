@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import Register from './views/Register';
@@ -13,7 +13,6 @@ export default function App() {
       <AuthProvider>
         <div>
           <Switch>
-            {/* route umiescic - kategorie */}
             <Route exact path="/">
               <Login />
             </Route>

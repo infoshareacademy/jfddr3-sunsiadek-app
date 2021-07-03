@@ -10,7 +10,7 @@ import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import { useAuth } from '../context/AuthProvider';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const StyledMenu = withStyles({
   paper: {
@@ -46,8 +46,8 @@ const StyledMenuItem = withStyles(theme => ({
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const [error, setError] = useState('');
-  const { currentUser, logout } = useAuth();
+  const [setError] = useState('');
+  const { logout } = useAuth();
   const history = useHistory();
 
   const handleClick = event => {
