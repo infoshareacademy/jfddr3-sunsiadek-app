@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { db } from '../../firebase-config';
 import firebase from 'firebase';
 import { useAuth } from '../../context/AuthProvider';
+
 export default function AddingAds() {
-  const category = document.getElementById('category');
-  const title = document.getElementById('title');
-  const descriptions = document.getElementById('descriptions');
+  const category = useRef();
+  const title = useRef();
+  const descriptions = useRef();
   const myDateCreated = firebase.firestore.Timestamp.fromDate(new Date());
   const { currentUser } = useAuth();
 
@@ -21,9 +22,9 @@ export default function AddingAds() {
     ).value;
     const data = {
       author: currentUser.email,
-      category: category.value,
-      title: title.value,
-      descriptions: descriptions.value,
+      category: category.current.value,
+      title: title.current.value,
+      descriptions: descriptions.current.value,
       givetake: checkedGiveOrTake,
       dateCreated: myDateCreated,
       status: 'active'
@@ -37,7 +38,7 @@ export default function AddingAds() {
       <form>
         <div>
           <label htmlFor="category">Kategoria</label>
-          <select id="category" name="category">
+          <select ref={category} id="category" name="category">
             <option disabled value="">
               Wybierz kategorie
             </option>
@@ -51,11 +52,12 @@ export default function AddingAds() {
         </div>
         <div>
           <label for="title">Tytuł</label>
-          <input required id="title" name="title"></input>
+          <input ref={title} required id="title" name="title"></input>
         </div>
         <div>
           <label for="descriptions">Opis</label>
           <textarea
+            ref={descriptions}
             style={{ height: 100, width: 400 }}
             required
             id="descriptions"
@@ -82,12 +84,3 @@ export default function AddingAds() {
     </>
   );
 }
-
-// const date = new Date();
-// let h = date.getHours();
-// let m = date.getMinutes();
-// let s = date.getSeconds();
-// const date2 = new Date();
-// let day = date2.getDate();
-// let month = date2.getMonth() + 1;
-// let year = date2.getFullYear();
