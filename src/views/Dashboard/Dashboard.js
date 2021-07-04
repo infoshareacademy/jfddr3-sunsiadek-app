@@ -2,12 +2,7 @@ import React from 'react';
 import ButtonBases from '../../components/DashboardMenuButtons';
 import { NavigationBox } from '../../components/NavigationBox';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
-import SmallFixes from '../../DashboardCategories/SmallFixes';
-import StorageSpace from '../../DashboardCategories/StorageSpace';
-import Helper from '../../DashboardCategories/Helper';
-import ParkingSpace from '../../DashboardCategories/ParkingSpace';
-import Events from '../../DashboardCategories/Events';
-import Other from '../../DashboardCategories/Other';
+import Category from '../../components/Category';
 
 function Dashboard() {
   // const [userLog, setUserLog] = useState(null);
@@ -17,22 +12,22 @@ function Dashboard() {
       <div className="Dashboard">
         <NavigationBox></NavigationBox>
         <Route path="/dashboard/other">
-          <Other />
+          <Category title="Other" />
         </Route>
         <Route path="/dashboard/events">
-          <Events />
+          <Category title="events" />
         </Route>
         <Route path="/dashboard/parking">
-          <ParkingSpace />
+          <Category title="parking" />
         </Route>
         <Route path="/dashboard/helper">
-          <Helper />
+          <Category title="helper" />
         </Route>
         <Route path="/dashboard/storage-space">
-          <StorageSpace />
+          <Category title="storage-space" />
         </Route>
         <Route path="/dashboard/small-fixes">
-          <SmallFixes />
+          <Category title="small-fixes" />
         </Route>
         <Route exact path="/dashboard">
           <ButtonBases />
