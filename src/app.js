@@ -13,7 +13,7 @@ export default function App() {
       <AuthProvider>
         <div>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/login">
               <Login />
             </Route>
             <PrivateRoute exact path="/dashboard">
@@ -22,9 +22,9 @@ export default function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/addingads">
+            <PrivateRoute path="/post">
               <AddingAds />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </div>
       </AuthProvider>

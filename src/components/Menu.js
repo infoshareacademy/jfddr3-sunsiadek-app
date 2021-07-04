@@ -63,7 +63,8 @@ export default function CustomizedMenus() {
 
     try {
       await logout();
-      history.push('');
+      history.push('/login');
+      window.location.reload();
     } catch {
       setError('Nie udało się wylogować');
       console.lgo(error);

@@ -7,7 +7,6 @@ import {
   Button,
   Avatar,
   Typography
-  // Link
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 

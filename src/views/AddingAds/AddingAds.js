@@ -13,10 +13,6 @@ export default function AddingAds() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // // konwert daty na czytelny
-    // const myDateConvert = myDate.toDate();
-    // console.log(myDateConvert);
-
     const checkedGiveOrTake = document.querySelector(
       'input[name=give-take]:checked'
     ).value;

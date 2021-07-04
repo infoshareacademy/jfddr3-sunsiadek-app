@@ -5,8 +5,6 @@ import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import Category from '../../components/Category';
 
 function Dashboard() {
-  // const [userLog, setUserLog] = useState(null);
-
   return (
     <Switch>
       <div className="Dashboard">

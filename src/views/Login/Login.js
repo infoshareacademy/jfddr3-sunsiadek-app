@@ -7,7 +7,6 @@ import {
   Button,
   Avatar,
   Typography
-  // Link
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import { useAuth } from '../../context/AuthProvider';
@@ -45,9 +44,8 @@ export default function Login() {
       setLoading(true);
       await login(e.target.email.value, e.target.password.value);
       history.push('/dashboard');
-    } catch {
+    } catch (error) {
       setError('Nie udało się zalogowac');
-      // console.log(error);
     }
     setLoading(false);
   }
