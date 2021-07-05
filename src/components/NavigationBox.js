@@ -1,5 +1,6 @@
 import CustomizedMenus from './Menu';
 import styled from 'styled-components';
+import { useAuth } from '../context/AuthProvider';
 
 const NavBox = styled.div`
   width: 90%;
@@ -14,9 +15,12 @@ const NavBox = styled.div`
 `;
 
 export const NavigationBox = () => {
+  const { currentUser } = useAuth();
+
   return (
     <NavBox>
       <img src="./images/logo.png" width="45" alt="This is a logo" />
+      {currentUser && <p>Sunsiad: {currentUser.email}</p>}
       <CustomizedMenus></CustomizedMenus>
     </NavBox>
   );

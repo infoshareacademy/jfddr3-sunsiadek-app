@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -8,6 +8,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import EmailIcon from '@material-ui/icons/Email';
 import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
+import { useAuth } from '../context/AuthProvider';
+import { useHistory } from 'react-router-dom';
 
 const StyledMenu = withStyles({
   paper: {
@@ -43,6 +46,10 @@ const StyledMenuItem = withStyles(theme => ({
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const [error, setError] = useState('');
+  const { logout } = useAuth();
+  const history = useHistory();
+
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -50,6 +57,19 @@ export default function CustomizedMenus() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  async function handleLogout() {
+    setError('');
+
+    try {
+      await logout();
+      history.push('/login');
+      window.location.reload();
+    } catch {
+      setError('Nie udało się wylogować');
+      console.lgo(error);
+    }
+  }
 
   return (
     <div>
@@ -79,7 +99,7 @@ export default function CustomizedMenus() {
           </ListItemIcon>
           <ListItemText primary="Adverts" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={handleLogout}>
           <ListItemIcon>
             <ExitToAppIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
