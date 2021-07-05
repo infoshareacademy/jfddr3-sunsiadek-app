@@ -6,6 +6,7 @@ import Register from './views/Register';
 import { AuthProvider } from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute';
 import AddingAds from './views/AddingAds/AddingAds';
+import SingleAd from './views/SingleAd';
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
             <PrivateRoute path="/post">
               <AddingAds />
             </PrivateRoute>
+            <Route path="/singleAd">
+              <SingleAd />
+            </Route>
           </Switch>
         </div>
       </AuthProvider>

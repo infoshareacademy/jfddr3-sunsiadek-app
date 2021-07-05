@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "/jfddr3-sunsiadek-app/",
   "scripts": {
-    "start": "PUBLIC_URL=\".\" react-scripts start",
+    "start": "PUBLIC_URL=\"login\" react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
