@@ -9,6 +9,7 @@ import {
   Typography
 } from '@material-ui/core';
 import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
+
 import { useAuth } from '../../context/AuthProvider';
 
 import { Link, useHistory } from 'react-router-dom';
@@ -30,8 +31,8 @@ const StyledAvatar = styled(Avatar)`
   background-color: gray;
 `;
 
-export default function Login() {
-  const { login } = useAuth();
+export default function Register() {
+  const { signUp } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -39,13 +40,17 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    if (e.target.password.value !== e.target.passwordconfirm.value) {
+      return setError('Hasła nie są takie same');
+    }
+
     try {
       setError('');
       setLoading(true);
-      await login(e.target.email.value, e.target.password.value);
-      history.push('/dashboard');
-    } catch (error) {
-      setError('Nie udało się zalogowac');
+      await signUp(e.target.email.value, e.target.password.value);
+      history.push('/');
+    } catch {
+      setError('Nie udało się utworzyć konta');
     }
     setLoading(false);
   }
@@ -57,7 +62,7 @@ export default function Login() {
           <StyledAvatar>
             <LockOpenOutlinedIcon />
           </StyledAvatar>
-          <Typography variant="h6"> Login</Typography>
+          <Typography variant="h6"> Register</Typography>
           {error && <p>{error}</p>}
         </Box>
         <form onSubmit={handleSubmit}>
@@ -75,6 +80,12 @@ export default function Login() {
             type="password"
             required
           />
+          <TextField
+            id="passwordconfirm"
+            name="passwordconfirm"
+            label="Password Confirmation"
+            type="password"
+          />
           <Box>
             <StyledButton
               disabled={loading}
@@ -82,10 +93,10 @@ export default function Login() {
               variant="contained"
               color="primary"
             >
-              Login
+              Register
             </StyledButton>
             <Typography>
-              Potrzebujesz konta? <Link to="/register">Sign Up</Link>
+              Masz juz konto? <Link to="/">Sign In</Link>
             </Typography>
           </Box>
         </form>
