@@ -9,7 +9,7 @@ export const UserDescription = () => {
   };
 
   const updateValue = () => {
-    setIsInEditMode(!isInEditMode);
+    // setIsInEditMode(!isInEditMode);
   };
 
   const renderEditView = () => {
