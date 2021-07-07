@@ -23,17 +23,17 @@ export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
       });
   }, []);
   if (!announcement) {
-    return 'Nie znaleziono ogłoszenia w bazie danych'
+    return 'Nie znaleziono ogłoszenia w bazie danych';
   }
-  
+
   return (
-      <div>
-          <h2>{announcement.title}</h2>
-          <p>{announcement.descriptions}</p>
-          <p>{announcement.author}</p>
-          <p>{announcement.category}</p>
-          <p>{announcement.givetake}</p>
-          <p>{announcement.status}</p>
+    <div>
+      <h2>{announcement.title}</h2>
+      <p>{announcement.descriptions}</p>
+      <p>{announcement.author}</p>
+      <p>{announcement.category}</p>
+      <p>{announcement.givetake}</p>
+      <p>{announcement.status}</p>
     </div>
   );
 }
