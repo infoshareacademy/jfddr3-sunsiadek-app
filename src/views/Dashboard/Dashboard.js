@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link , BrowserRouter as Switch, Route } from 'react-router-dom';
 import ButtonBases from '../../components/DashboardMenuButtons';
 import { NavigationBox } from '../../components/NavigationBox';
-import { BrowserRouter as Switch, Route } from 'react-router-dom';
+
 import Category from '../../components/Category';
 
 function Dashboard() {
   return (
-    <Switch>
+    <>
+      <Link to="/post">/post - przekierowanie z dashboard</Link>
+      This is Dashboard.
       <div className="Dashboard">
         <NavigationBox></NavigationBox>
-        <Route path="/other">
+        <Route path="/dashboard/other">
           <Category title="Other" />
         </Route>
         <Route path="/events">
@@ -24,14 +27,15 @@ function Dashboard() {
         <Route path="/storage-space">
           <Category title="storage-space" />
         </Route>
-        <Route path="/small-fixes">
+        <Route path="/dashboard/small-fixes">
           <Category title="small-fixes" />
         </Route>
-        <Route exact path="/">
+        <Route exact path="/dashboard">
+          ButtonBases route
           <ButtonBases />
         </Route>
       </div>
-    </Switch>
+    </>
   );
 }
 
