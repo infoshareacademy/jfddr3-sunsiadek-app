@@ -6,7 +6,7 @@ import Category from '../../components/Category';
 
 function Dashboard() {
   return (
-    <>
+    <Switch>
       <div className="Dashboard">
         <NavigationBox></NavigationBox>
         <Route path="/other">
