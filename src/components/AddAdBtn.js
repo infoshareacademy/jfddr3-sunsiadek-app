@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link , useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-export function AddAdBtn() {
+export function AddAdBtn(category) {
   const history = useHistory();
 
   function handleGoToPost(e) {
@@ -12,7 +12,6 @@ export function AddAdBtn() {
   return (
     <div>
       <button onClick={handleGoToPost}>Dodaj</button>
-      <Link to="/post">Dodaj</Link>
     </div>
   );
 }
