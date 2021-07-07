@@ -48,7 +48,7 @@ export default function Register() {
       setError('');
       setLoading(true);
       await signUp(e.target.email.value, e.target.password.value);
-      history.push('/');
+      history.push('/dashboard');
     } catch {
       setError('Nie udało się utworzyć konta');
     }
@@ -96,7 +96,7 @@ export default function Register() {
               Register
             </StyledButton>
             <Typography>
-              Masz juz konto? <Link to="/">Sign In</Link>
+              Masz juz konto? <Link to="/login">Sign In</Link>
             </Typography>
           </Box>
         </form>

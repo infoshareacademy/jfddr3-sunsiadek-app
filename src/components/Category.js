@@ -8,7 +8,7 @@ const Category = ({ title }) => {
     <Container>
       <AddAdBtn></AddAdBtn>
       <Typography as="h2">{title}</Typography>
-      <Link component={RouterLink} to="/">
+      <Link component={RouterLink} to="/dashboard">
         Wróć
       </Link>
     </Container>

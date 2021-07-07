@@ -17,14 +17,14 @@ export default function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <PrivateRoute exact path="/">
-              <Dashboard />
-            </PrivateRoute>
             <Route path="/register">
               <Register />
             </Route>
             <PrivateRoute path="/post">
               <AddingAds />
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
             </PrivateRoute>
             <Route path="/singleAd">
               <SingleAd />
