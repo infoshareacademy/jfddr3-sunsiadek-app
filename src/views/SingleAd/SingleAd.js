@@ -14,10 +14,6 @@ export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
           console.log('Document data:', doc.data());
           const currentAd = doc.data();
           setAnnouncement(currentAd);
-          console.log('State');
-          console.log(announcement);
-          const dateConvert = announcement.dateCreated.toDate();
-          console.log(dateConvert);
         } else {
           console.log('No such document!');
         }
