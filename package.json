@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "/jfddr3-sunsiadek-app/",
   "scripts": {
-    "start": "PUBLIC_URL=\"login\" react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
@@ -42,7 +42,19 @@
       "react-app/jest",
       "plugin:import/errors",
       "plugin:import/warnings"
-    ]
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    }
   },
   "browserslist": {
     "production": [
