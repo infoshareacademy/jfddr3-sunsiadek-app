@@ -28,7 +28,7 @@ export default function AddingAds() {
       status: 'active'
     };
     db.collection('announcements').add(data);
-    history.push('/dashboard');
+    history.push('/');
   }
 
   return (
