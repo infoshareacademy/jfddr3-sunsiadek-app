@@ -17,18 +17,15 @@ export default function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route path="/register">
+            <Route exact path="/register">
               <Register />
             </Route>
-            <PrivateRoute path="/post">
+            <PrivateRoute exact path="/post">
               <AddingAds />
             </PrivateRoute>
-            <PrivateRoute path="/dashboard">
+            <PrivateRoute path="/">
               <Dashboard />
             </PrivateRoute>
-            <Route path="/singleAd">
-              <SingleAd />
-            </Route>
           </Switch>
         </div>
       </AuthProvider>
