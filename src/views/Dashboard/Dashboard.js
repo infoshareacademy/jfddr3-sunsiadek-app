@@ -31,7 +31,7 @@ function Dashboard() {
           <ButtonBases />
         </Route>
       </div>
-    </>
+    </Switch>
   );
 }
 
