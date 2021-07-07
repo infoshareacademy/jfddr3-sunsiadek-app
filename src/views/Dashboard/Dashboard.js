@@ -9,25 +9,25 @@ function Dashboard() {
     <>
       <div className="Dashboard">
         <NavigationBox></NavigationBox>
-        <Route path="/dashboard/other">
+        <Route path="/other">
           <Category title="Other" />
         </Route>
-        <Route path="/dashboard/events">
+        <Route path="/events">
           <Category title="events" />
         </Route>
-        <Route path="/dashboard/parking">
+        <Route path="/parking">
           <Category title="parking" />
         </Route>
-        <Route path="/dashboard/helper">
+        <Route path="/helper">
           <Category title="helper" />
         </Route>
-        <Route path="/dashboard/storage-space">
+        <Route path="/storage-space">
           <Category title="storage-space" />
         </Route>
-        <Route path="/dashboard/small-fixes">
+        <Route path="/small-fixes">
           <Category title="small-fixes" />
         </Route>
-        <Route exact path="/dashboard">
+        <Route exact path="/">
           <ButtonBases />
         </Route>
       </div>

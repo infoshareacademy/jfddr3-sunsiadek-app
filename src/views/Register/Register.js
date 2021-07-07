@@ -48,7 +48,7 @@ export default function Register() {
       setError('');
       setLoading(true);
       await signUp(e.target.email.value, e.target.password.value);
-      history.push('/dashboard');
+      history.push('/');
     } catch {
       setError('Nie udało się utworzyć konta');
     }
