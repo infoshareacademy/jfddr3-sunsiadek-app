@@ -6,10 +6,6 @@ export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
 
   const [announcement, setAnnouncement] = useState(null);
 
-  // // konwert daty na czytelny
-  // const myDateConvert = myDate.toDate();
-  // console.log(myDateConvert);
-
   useEffect(() => {
     docRef
       .get()
@@ -40,7 +36,6 @@ export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
           <p>{announcement.category}</p>
           <p>{announcement.givetake}</p>
           <p>{announcement.status}</p>
-          {/* <p>{announcement.myDateCOnvert}</p> */}
         </div>
       )}
     </>
