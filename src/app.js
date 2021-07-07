@@ -11,22 +11,12 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
-        <div>
-          <Switch>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <PrivateRoute exact path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <PrivateRoute path="/post">
-              <AddingAds />
-            </PrivateRoute>
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <PrivateRoute exact path="/post" component={AddingAds} />
+          <PrivateRoute path="/" component={Dashboard} />
+        </Switch>
       </AuthProvider>
     </Router>
   );

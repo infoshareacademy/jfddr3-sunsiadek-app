@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { db } from '../../firebase-config';
 import firebase from 'firebase';
 import { useAuth } from '../../context/AuthProvider';
+import { useHistory } from 'react-router-dom';
 
 export default function AddingAds() {
   const category = useRef();
@@ -9,6 +10,7 @@ export default function AddingAds() {
   const descriptions = useRef();
   const myDateCreated = firebase.firestore.Timestamp.fromDate(new Date());
   const { currentUser } = useAuth();
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,6 +28,7 @@ export default function AddingAds() {
       status: 'active'
     };
     db.collection('announcements').add(data);
+    history.push('/');
   }
 
   return (

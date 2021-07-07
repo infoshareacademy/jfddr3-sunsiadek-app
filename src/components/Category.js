@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import { db } from '../firebase-config';
+import { AddAdBtn } from './AddAdBtn';
 
 const Category = ({ title: categoryTitle, categoryName }) => {
   const [announcements, setAnnouncements] = useState([]);
@@ -32,6 +33,7 @@ const Category = ({ title: categoryTitle, categoryName }) => {
 
   return (
     <Container>
+      <AddAdBtn></AddAdBtn>
       <Typography variant="h4">{categoryTitle}</Typography>
       <Link component={RouterLink} to="/dashboard">
         Wróć do listy kategorii

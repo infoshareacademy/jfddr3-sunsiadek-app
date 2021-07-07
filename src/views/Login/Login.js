@@ -43,7 +43,7 @@ export default function Login() {
       setError('');
       setLoading(true);
       await login(e.target.email.value, e.target.password.value);
-      history.push('/dashboard');
+      history.push('/');
     } catch (error) {
       setError('Nie udało się zalogowac');
     }
