@@ -6,7 +6,7 @@ const Category = ({ title }) => {
   return (
     <Container>
       <Typography as="h2">{title}</Typography>
-      <Link component={RouterLink} to="/dashboard">
+      <Link component={RouterLink} to="/">
         Wróć
       </Link>
     </Container>

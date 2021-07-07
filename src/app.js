@@ -16,14 +16,14 @@ export default function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <PrivateRoute exact path="/">
-              <Dashboard />
-            </PrivateRoute>
-            <Route path="/register">
+            <Route exact path="/register">
               <Register />
             </Route>
-            <PrivateRoute path="/post">
+            <PrivateRoute exact path="/post">
               <AddingAds />
+            </PrivateRoute>
+            <PrivateRoute path="/">
+              <Dashboard />
             </PrivateRoute>
           </Switch>
         </div>
