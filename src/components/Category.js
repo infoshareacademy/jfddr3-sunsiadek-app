@@ -21,7 +21,9 @@ const Category = ({ title: categoryTitle, categoryName }) => {
           .collection('announcements')
           .where('category', '==', categoryName)
           .get();
-        setAnnouncements(snapshot.docs.map(doc => doc.data()));
+        setAnnouncements(
+          snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+        );
         console.log(snapshot);
       } catch (e) {
         console.error(e);
@@ -40,11 +42,17 @@ const Category = ({ title: categoryTitle, categoryName }) => {
       </Link>
 
       <List>
-        {announcements.map(({ title, descriptions, author }) => {
+        {announcements.map(({ title, descriptions, author, id }) => {
           return (
             <ListItem>
               <ListItemText
-                primary={<Typography variant="h5">{title}</Typography>}
+                primary={
+                  <Typography variant="h5">
+                    <Link component={RouterLink} to={`/ad/${id}`}>
+                      {title}
+                    </Link>
+                  </Typography>
+                }
                 secondary={
                   <>
                     <Typography>Treść: {descriptions}</Typography>

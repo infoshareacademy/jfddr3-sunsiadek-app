@@ -6,6 +6,7 @@ import Register from './views/Register';
 import { AuthProvider } from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute';
 import AddingAds from './views/AddingAds/AddingAds';
+import SingleAd from './views/SingleAd/SingleAd';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <PrivateRoute exact path="/post" component={AddingAds} />
+          <PrivateRoute exact path="/ad/:id" component={SingleAd} />
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
       </AuthProvider>
