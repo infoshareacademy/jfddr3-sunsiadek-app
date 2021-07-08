@@ -35,7 +35,7 @@ const Category = ({ title: categoryTitle, categoryName }) => {
     <Container>
       <AddAdBtn></AddAdBtn>
       <Typography variant="h4">{categoryTitle}</Typography>
-      <Link component={RouterLink} to="/dashboard">
+      <Link component={RouterLink} to="/">
         Wróć do listy kategorii
       </Link>
 
