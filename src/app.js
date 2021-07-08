@@ -8,9 +8,11 @@ import PrivateRoute from './components/PrivateRoute';
 import AddingAds from './views/AddingAds/AddingAds';
 import SingleAd from './views/SingleAd/SingleAd';
 
+const BASE_NAME = '/jfddr3-sunsiadek-app';
+
 export default function App() {
   return (
-    <Router>
+    <Router basename={BASE_NAME}>
       <AuthProvider>
         <Switch>
           <Route exact path="/login" component={Login} />
