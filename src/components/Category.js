@@ -29,7 +29,7 @@ const Category = ({ title: categoryTitle, categoryName }) => {
     };
 
     fetchAnnouncements();
-  }, []);
+  }, [categoryName]);
 
   return (
     <Container>
