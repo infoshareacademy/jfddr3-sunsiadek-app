@@ -5,8 +5,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
-import EmailIcon from '@material-ui/icons/Email';
-import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Route } from 'react-router';
 import Profile from '../views/Profile/Profile';

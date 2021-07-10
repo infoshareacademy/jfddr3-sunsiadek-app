@@ -4,8 +4,9 @@ import MultilineTextFields from '../../components/TextArea';
 import styled from 'styled-components';
 import { NavigationBox } from '../../components/NavigationBox';
 import { ProfileNavBox } from '../../components/ProfileNaxBox';
-import { UserDescription } from '../../components/UserDescription';
+// import { UserDescription } from '../../components/UserDescription';
 import { Link } from 'react-router-dom';
+import { AddDescriptionBtn } from '../../components/AddDescriptionBtn';
 
 const StyledApplication = styled.div`
   background-color: #f2f3f4;
@@ -92,21 +93,7 @@ function Profile() {
             </Button>
           </PhotoContainer>
           <Description>
-            <Form>
-              <TextField id="standard-basic" label="Name" />
-              <TextField
-                id="standard-multiline-static"
-                label="Description"
-                multiline
-                rows={5}
-                defaultValue=""
-              />
-
-              <Button variant="outlined" color="primary">
-                Save
-              </Button>
-            </Form>
-            <UserDescription />
+            <AddDescriptionBtn />
           </Description>
         </DescriptionArea>
         <ReferenceContainer>

@@ -1,4 +1,3 @@
-import CustomizedMenus from './Menu';
 import styled from 'styled-components';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useAuth } from '../context/AuthProvider';
