@@ -10,10 +10,11 @@ import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Route } from 'react-router';
 import Profile from '../views/Profile/Profile';
-import { Link as RouterLink , useHistory } from 'react-router-dom';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { Container, Typography, Link } from '@material-ui/core';
 
 import { useAuth } from '../context/AuthProvider';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 import { react } from '@babel/types';
 
@@ -98,7 +99,7 @@ export default function CustomizedMenus() {
       >
         <StyledMenuItem onClick={goToProfile}>
           <ListItemIcon>
-            <EmailIcon style={{ fontSize: 25 }} />
+            <PersonOutlineIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
           <ListItemText primary="Profile" />
         </StyledMenuItem>
