@@ -78,7 +78,7 @@ export default function CustomizedMenus() {
       <MenuIcon
         color="primary"
         fontSize="large"
-        style={{ color: 'black' }}
+        style={{ color: '#2e4053' }}
         onClick={handleClick}
       />
 
@@ -91,16 +91,16 @@ export default function CustomizedMenus() {
       >
         <StyledMenuItem onClick={goToProfile}>
           <ListItemIcon>
-            <PersonOutlineIcon style={{ fontSize: 25 }} />
+            <PersonOutlineIcon style={{ fontSize: 25, color: '#2e4053' }} />
           </ListItemIcon>
-          <ListItemText primary="Profile" />
+          <ListItemText style={{ color: '#2e4053' }} primary="Profile" />
         </StyledMenuItem>
 
         <StyledMenuItem onClick={handleLogout}>
           <ListItemIcon>
-            <ExitToAppIcon style={{ fontSize: 25 }} />
+            <ExitToAppIcon style={{ fontSize: 25, color: '#2e4053' }} />
           </ListItemIcon>
-          <ListItemText primary="Log out" />
+          <ListItemText style={{ color: '#2e4053' }} primary="Log out" />
         </StyledMenuItem>
       </StyledMenu>
     </div>
