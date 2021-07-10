@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Title = styled.p`
+  color: #2e4053;
+`;
 
 export default function SingleAd() {
   const { id } = useParams();
@@ -31,8 +36,8 @@ export default function SingleAd() {
 
   return (
     <div>
-      <h2>{announcement.title}</h2>
-      <p>{announcement.descriptions}</p>
+      <Title>{announcement.title}</Title>
+      <Title>{announcement.descriptions}</Title>
       <p>{announcement.author}</p>
       <p>{announcement.category}</p>
       <p>{announcement.givetake}</p>
