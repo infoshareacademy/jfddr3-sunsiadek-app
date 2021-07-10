@@ -6,16 +6,20 @@ import Register from './views/Register';
 import { AuthProvider } from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute';
 import AddingAds from './views/AddingAds/AddingAds';
+import SingleAd from './views/SingleAd/SingleAd';
 import Profile from './views/Profile/Profile';
+
+const BASE_NAME = '/jfddr3-sunsiadek-app';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={BASE_NAME}>
       <AuthProvider>
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <PrivateRoute exact path="/post" component={AddingAds} />
+          <PrivateRoute exact path="/ad/:id" component={SingleAd} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
