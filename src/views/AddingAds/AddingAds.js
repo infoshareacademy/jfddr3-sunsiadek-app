@@ -60,7 +60,7 @@ export default function AddingAds() {
   return (
     <>
       <StyledApplication>
-        <StyledHeading>Dodaj ogłoszenie</StyledHeading>
+        <StyledHeading>Create new ad</StyledHeading>
         <StyledForm>
           <StyledDiv>
             <label
