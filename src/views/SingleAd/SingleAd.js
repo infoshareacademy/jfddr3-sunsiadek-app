@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
+import { useParams } from 'react-router-dom';
 
-export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
-  var docRef = db.collection('announcements').doc(idA);
-
+export default function SingleAd() {
+  const { id } = useParams();
   const [announcement, setAnnouncement] = useState(null);
 
   useEffect(() => {
+    const docRef = db.collection('announcements').doc(id);
+
     docRef
       .get()
       .then(doc => {
@@ -21,7 +23,8 @@ export default function SingleAd({ idA = 'lyntpy7s81lMGN1gmRKS' }) {
       .catch(error => {
         console.log('Error getting document:', error);
       });
-  }, []);
+  }, [id]);
+
   if (!announcement) {
     return 'Nie znaleziono ogłoszenia w bazie danych';
   }
