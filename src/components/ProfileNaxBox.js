@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const NavBox = styled.div`
-  width: 90%;
-  /* background-color: red; */
+  width: 95%;
+  background-color: #f2f3f4;
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
