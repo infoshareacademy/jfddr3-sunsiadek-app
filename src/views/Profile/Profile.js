@@ -12,24 +12,18 @@ const DescriptionArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 90%;
+  height: 600px;
   margin: 10px;
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
-const Description = styled.div`
-  height: 350px;
-  width: 100%;
-  padding: 7px;
-  display: flex;
-`;
-
 const PhotoContainer = styled.div`
   height: 250px;
-  width: 40%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,24 +38,13 @@ const MockPhoto = styled.div`
   margin: 10px;
 `;
 
-const ReferenceContainer = styled.div`
-  height: 220px;
-  width: 90%;
-  margin: 10px;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledAnchor = styled.a`
+export const StyledAnchor = styled.a`
   color: #2e4053;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border: 1px solid #2e4053;
-  border-radius: 12px;
-  margin: 10px 0 60px 0;
+  border-radius: 15px;
+  margin: 10px 0 10px 0;
   width: 50%;
   text-align: center;
 `;
@@ -75,20 +58,21 @@ function Profile() {
         <DescriptionArea>
           <PhotoContainer>
             <MockPhoto />
-            <Button size="small" variant="outlined" color="primary">
+            <Button
+              style={{ height: '22px', width: '65px', borderRadius: '8px' }}
+              size="small"
+              variant="outlined"
+              color="#2e4053"
+            >
               edit
             </Button>
           </PhotoContainer>
-          <Description>
-            <AddDescriptionBtn />
-          </Description>
-        </DescriptionArea>
-        <ReferenceContainer>
-          <StyledAnchor>go to your messages...</StyledAnchor>
+          <AddDescriptionBtn />
+          <StyledAnchor>Check your messages 📩</StyledAnchor>
           <Link to="/">
-            <StyledAnchor>back to dashboard...</StyledAnchor>
+            <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
           </Link>
-        </ReferenceContainer>
+        </DescriptionArea>
       </StyledApplication>
     </>
   );

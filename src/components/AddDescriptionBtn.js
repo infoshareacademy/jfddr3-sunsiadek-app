@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { StyledAnchor } from '../views/Profile/Profile';
 
 export function AddDescriptionBtn() {
   const history = useHistory();
@@ -11,7 +12,9 @@ export function AddDescriptionBtn() {
 
   return (
     <div>
-      <button onClick={handleGoToDescription}>Edit your profile</button>
+      <StyledAnchor onClick={handleGoToDescription}>
+        Edit your profile 🖊️
+      </StyledAnchor>
     </div>
   );
 }
