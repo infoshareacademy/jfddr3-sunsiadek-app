@@ -8,9 +8,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import EmailIcon from '@material-ui/icons/Email';
 import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { Route } from 'react-router';
+import Profile from '../views/Profile/Profile';
+import { Link as RouterLink , useHistory } from 'react-router-dom';
+import { Container, Typography, Link } from '@material-ui/core';
 
 import { useAuth } from '../context/AuthProvider';
-import { useHistory } from 'react-router-dom';
+
+import { react } from '@babel/types';
 
 const StyledMenu = withStyles({
   paper: {
@@ -71,6 +76,10 @@ export default function CustomizedMenus() {
     }
   }
 
+  const goToProfile = () => {
+    history.push('/profile');
+  };
+
   return (
     <div>
       <MenuIcon
@@ -87,18 +96,13 @@ export default function CustomizedMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem>
+        <StyledMenuItem onClick={goToProfile}>
           <ListItemIcon>
             <EmailIcon style={{ fontSize: 25 }} />
           </ListItemIcon>
-          <ListItemText primary="Messages" />
+          <ListItemText primary="Profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
-          <ListItemIcon>
-            <NoteIcon style={{ fontSize: 25 }} />
-          </ListItemIcon>
-          <ListItemText primary="Adverts" />
-        </StyledMenuItem>
+
         <StyledMenuItem onClick={handleLogout}>
           <ListItemIcon>
             <ExitToAppIcon style={{ fontSize: 25 }} />
