@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { NavigationBox } from '../../components/NavigationBox';
 import { ProfileNavBox } from '../../components/ProfileNaxBox';
 import { UserDescription } from '../../components/UserDescription';
+import { Link } from 'react-router-dom';
 
 const StyledApplication = styled.div`
   background-color: #f2f3f4;
@@ -110,7 +111,9 @@ function Profile() {
         </DescriptionArea>
         <ReferenceContainer>
           <StyledAnchor>go to your messages...</StyledAnchor>
-          <StyledAnchor>go to your adverts...</StyledAnchor>
+          <Link to="/">
+            <StyledAnchor>back to dashboard...</StyledAnchor>
+          </Link>
         </ReferenceContainer>
       </StyledApplication>
     </>
