@@ -1,10 +1,6 @@
-import { Button, TextField } from '@material-ui/core';
-
-import MultilineTextFields from '../../components/TextArea';
+import { Button } from '@material-ui/core';
 import styled from 'styled-components';
-import { NavigationBox } from '../../components/NavigationBox';
 import { ProfileNavBox } from '../../components/ProfileNaxBox';
-// import { UserDescription } from '../../components/UserDescription';
 import { Link } from 'react-router-dom';
 import { AddDescriptionBtn } from '../../components/AddDescriptionBtn';
 
@@ -29,15 +25,6 @@ const Description = styled.div`
   width: 100%;
   padding: 7px;
   display: flex;
-`;
-
-const Form = styled.div`
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 `;
 
 const PhotoContainer = styled.div`

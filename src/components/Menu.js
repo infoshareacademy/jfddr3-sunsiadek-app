@@ -6,15 +6,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { Route } from 'react-router';
-import Profile from '../views/Profile/Profile';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
-import { Container, Typography, Link } from '@material-ui/core';
-
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-
-import { react } from '@babel/types';
 
 const StyledMenu = withStyles({
   paper: {
