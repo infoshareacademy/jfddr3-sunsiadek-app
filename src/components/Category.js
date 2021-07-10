@@ -35,11 +35,20 @@ const Category = ({ title: categoryTitle, categoryName }) => {
 
   return (
     <Container>
-      <AddAdBtn></AddAdBtn>
-      <Typography variant="h4">{categoryTitle}</Typography>
-      <Link component={RouterLink} to="/">
-        Wróć do listy kategorii
+      <Link
+        style={{ color: '#2e4053', fontWeight: 500 }}
+        component={RouterLink}
+        to="/"
+      >
+        ⬅️ go back to Category list
       </Link>
+      <Typography
+        style={{ color: '#2e4053', margin: '10px', fontSize: '40px' }}
+        variant="h4"
+      >
+        {categoryTitle}
+      </Typography>
+      <AddAdBtn></AddAdBtn>
 
       <List>
         {announcements.map(({ title, descriptions, author, id }) => {
