@@ -16,7 +16,7 @@ function Dashboard() {
       <div className="Dashboard">
         <NavigationBox />
         <Route path="/other">
-          <Category title="Other" categoryName={CATEGORIES.OPTHER} />
+          <Category title="Other" categoryName={CATEGORIES.OTHER} />
         </Route>
         <Route path="/events">
           <Category title="Events" categoryName={CATEGORIES.EVENTS} />
