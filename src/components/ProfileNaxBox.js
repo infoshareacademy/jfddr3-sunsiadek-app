@@ -3,6 +3,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useAuth } from '../context/AuthProvider';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const NavBox = styled.div`
   width: 95%;
@@ -36,7 +37,7 @@ export const ProfileNavBox = () => {
 
   return (
     <NavBox>
-      <img src="./images/logo.png" width="45" alt="This is a logo" />
+      <img src={logo} width="45" alt="This is a logo" />
       <ExitToAppIcon onClick={handleLogout} style={{ fontSize: 35 }} />
     </NavBox>
   );
