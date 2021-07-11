@@ -27,6 +27,7 @@ export default function ShowProfile() {
 
   return (
     <div>
+      <h3>Informacje o autorze:</h3>
       {profile && <p>{profile.userDescription}</p>}
       {profile && <p>{profile.userName}</p>}
     </div>
