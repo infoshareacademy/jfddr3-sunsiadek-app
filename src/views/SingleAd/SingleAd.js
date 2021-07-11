@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Title = styled.p`
@@ -39,6 +39,7 @@ export default function SingleAd() {
       <Title>{announcement.title}</Title>
       <Title>{announcement.descriptions}</Title>
       <p>{announcement.author}</p>
+      <Link to={`/showprofile/${announcement.author}`}>Idz do profilu</Link>
     </div>
   );
 }

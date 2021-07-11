@@ -7,6 +7,7 @@ import { AuthProvider } from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute';
 import AddingAds from './views/AddingAds/AddingAds';
 import SingleAd from './views/SingleAd/SingleAd';
+import ShowProfile from './views/ShowProfile/ShowProfile';
 
 import Profile from './views/Profile/Profile';
 import AddDescription from './views/AddDescription/AddDescription';
@@ -27,7 +28,7 @@ export default function App() {
           <PrivateRoute path="/profile" component={Profile} />
 
           <PrivateRoute exact path="/ad/:id" component={SingleAd} />
-
+          <PrivateRoute path="/showprofile/:profil" component={ShowProfile} />
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
       </AuthProvider>
