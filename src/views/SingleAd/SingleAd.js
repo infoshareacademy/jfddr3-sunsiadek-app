@@ -39,9 +39,6 @@ export default function SingleAd() {
       <Title>{announcement.title}</Title>
       <Title>{announcement.descriptions}</Title>
       <p>{announcement.author}</p>
-      <p>{announcement.category}</p>
-      <p>{announcement.givetake}</p>
-      <p>{announcement.status}</p>
     </div>
   );
 }
