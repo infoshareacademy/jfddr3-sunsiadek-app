@@ -5,12 +5,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
-import EmailIcon from '@material-ui/icons/Email';
-import NoteIcon from '@material-ui/icons/Note';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
-import { useAuth } from '../context/AuthProvider';
 import { useHistory } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 const StyledMenu = withStyles({
   paper: {
@@ -71,12 +69,16 @@ export default function CustomizedMenus() {
     }
   }
 
+  const goToProfile = () => {
+    history.push('/profile');
+  };
+
   return (
     <div>
       <MenuIcon
         color="primary"
         fontSize="large"
-        style={{ color: 'black' }}
+        style={{ color: '#2e4053' }}
         onClick={handleClick}
       />
 
@@ -87,23 +89,18 @@ export default function CustomizedMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem>
+        <StyledMenuItem onClick={goToProfile}>
           <ListItemIcon>
-            <EmailIcon style={{ fontSize: 25 }} />
+            <PersonOutlineIcon style={{ fontSize: 25, color: '#2e4053' }} />
           </ListItemIcon>
-          <ListItemText primary="Messages" />
+          <ListItemText style={{ color: '#2e4053' }} primary="Profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
-          <ListItemIcon>
-            <NoteIcon style={{ fontSize: 25 }} />
-          </ListItemIcon>
-          <ListItemText primary="Adverts" />
-        </StyledMenuItem>
+
         <StyledMenuItem onClick={handleLogout}>
           <ListItemIcon>
-            <ExitToAppIcon style={{ fontSize: 25 }} />
+            <ExitToAppIcon style={{ fontSize: 25, color: '#2e4053' }} />
           </ListItemIcon>
-          <ListItemText primary="Log out" />
+          <ListItemText style={{ color: '#2e4053' }} primary="Log out" />
         </StyledMenuItem>
       </StyledMenu>
     </div>

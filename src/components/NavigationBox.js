@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { useAuth } from '../context/AuthProvider';
 
 const NavBox = styled.div`
-  width: 90%;
-  /* background-color: red; */
+  width: 95%;
+  background-color: #f2f3f4;
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;

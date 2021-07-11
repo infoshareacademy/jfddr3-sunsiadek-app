@@ -13,17 +13,20 @@ import { useAuth } from '../../context/AuthProvider';
 
 import { Link, useHistory } from 'react-router-dom';
 
+const StyledApplication = styled.div`
+  background-color: #f2f3f4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const StyledCard = styled(Card)`
   padding: 10px;
   height: auto;
-  width: 200px;
+  width: 300px;
   margin: 10px auto;
-`;
-
-const StyledButton = styled(Button)`
-  margin: auto;
-  background-color: gray;
-  width: auto;
+  border-radius: 5px;
 `;
 
 const StyledAvatar = styled(Avatar)`
@@ -51,45 +54,62 @@ export default function Login() {
   }
 
   return (
-    <Box align="center">
-      <StyledCard elevation={10}>
-        <Box align="center">
-          <StyledAvatar>
-            <LockOpenOutlinedIcon />
-          </StyledAvatar>
-          <Typography variant="h6"> Login</Typography>
-          {error && <p>{error}</p>}
-        </Box>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            id="email"
-            type="email"
-            name="email"
-            label="E-mail"
-            required
-          />
-          <TextField
-            id="password"
-            name="password"
-            label="Password"
-            type="password"
-            required
-          />
-          <Box>
-            <StyledButton
-              disabled={loading}
-              type="submit"
-              variant="contained"
-              color="primary"
-            >
-              Login
-            </StyledButton>
-            <Typography>
-              Potrzebujesz konta? <Link to="/register">Sign Up</Link>
-            </Typography>
+    <StyledApplication>
+      <Box align="center">
+        <StyledCard elevation={10}>
+          <Box align="center">
+            <StyledAvatar>
+              <LockOpenOutlinedIcon />
+            </StyledAvatar>
+            <Typography variant="h6"> Login</Typography>
+            {error && <p>{error}</p>}
           </Box>
-        </form>
-      </StyledCard>
-    </Box>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              id="email"
+              type="email"
+              name="email"
+              label="E-mail"
+              required
+            />
+            <TextField
+              id="password"
+              name="password"
+              label="Password"
+              type="password"
+              required
+            />
+            <Box>
+              <Button
+                disabled={loading}
+                type="submit"
+                variant="contained"
+                color="primary"
+                style={{
+                  backgroundColor: '#2e4053',
+                  margin: '15px',
+                  borderRadius: '5px'
+                }}
+              >
+                Login
+              </Button>
+              <Typography style={{ fontWeight: '500', color: '#2e4053' }}>
+                Want to join us?{' '}
+                <Link
+                  style={{
+                    textDecoration: 'none',
+                    color: '#2e4053',
+                    fontWeight: '400'
+                  }}
+                  to="/register"
+                >
+                  click here to register 😊{' '}
+                </Link>
+              </Typography>
+            </Box>
+          </form>
+        </StyledCard>
+      </Box>
+    </StyledApplication>
   );
 }
