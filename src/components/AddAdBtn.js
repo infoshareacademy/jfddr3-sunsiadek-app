@@ -12,6 +12,9 @@ export const StyledAnchor = styled.a`
   width: 50%;
   text-align: center;
   font-size: 12px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export function AddAdBtn(category) {
