@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 import { db } from '../../firebase-config';
-//import firebase from 'firebase';
-import { useAuth } from '../../context/AuthProvider';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
