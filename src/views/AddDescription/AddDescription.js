@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { db } from '../../firebase-config';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { useAuth } from '../../context/AuthProvider';
 
 const StyledApplication = styled.div`
   background-color: #f2f3f4;
@@ -31,7 +32,7 @@ const StyledHeading = styled.p`
 export default function AddDescription() {
   const userName = useRef();
   const userDescription = useRef();
-  //const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
   const history = useHistory();
 
   function handleSubmit(e) {
@@ -41,7 +42,7 @@ export default function AddDescription() {
       userName: userName.current.value,
       userDescription: userDescription.current.value
     };
-    db.collection('users').add(userData);
+    db.collection('users').doc(currentUser.email).set(userData);
     history.push('/profile');
   }
 
