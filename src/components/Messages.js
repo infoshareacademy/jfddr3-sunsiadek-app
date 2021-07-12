@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { StyledAnchor } from './AddAdBtn';
 import '../app.css';
 
-const Charts = () => {
+const Messages = () => {
   const scroll = useRef();
   const [messages, setMessages] = useState([]);
   useEffect(() => {
@@ -45,4 +45,4 @@ const Charts = () => {
   );
 };
 
-export default Charts;
+export default Messages;
