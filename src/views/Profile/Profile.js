@@ -66,9 +66,16 @@ function Profile() {
             </Button>
           </PhotoContainer>
           <AddDescriptionBtn />
-          <StyledAnchor> Forum 📩</StyledAnchor>
+
+          
           <Link to="/" style={{ textDecoration: 'none' }}>
             <StyledAnchor> ⬅️ Go back to dashboard</StyledAnchor>
+            </Link>
+          <Link to="/msg" style={{ textDecoration: 'none' }}>
+            <StyledAnchor> Forum 📩</StyledAnchor>
+          </Link>
+          <Link to="/">
+            <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
           </Link>
         </DescriptionArea>
       </StyledApplication>
