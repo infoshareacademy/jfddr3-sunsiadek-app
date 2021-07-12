@@ -1,6 +1,5 @@
 import { Button } from '@material-ui/core';
 import styled from 'styled-components';
-import { ProfileNavBox } from '../../components/ProfileNaxBox';
 import { Link } from 'react-router-dom';
 import { AddDescriptionBtn } from '../../components/AddDescriptionBtn';
 
@@ -17,7 +16,6 @@ const DescriptionArea = styled.div`
   height: 600px;
   margin: 10px;
   margin: 0 auto;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
@@ -53,7 +51,7 @@ function Profile() {
   return (
     <>
       <StyledApplication>
-        <ProfileNavBox />
+        {/* <ProfileNavBox /> */}
 
         <DescriptionArea>
           <PhotoContainer>

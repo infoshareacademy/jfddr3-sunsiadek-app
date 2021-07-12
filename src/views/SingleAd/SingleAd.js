@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { Typography, Button } from '@material-ui/core';
 
 const Title = styled.p`
-  color: #2e4053;
+  margin-top: 15px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Container = styled.div`
+  background-color: #f2f3f4;
+  border: solid 1px #aaa;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
 `;
 
 export default function SingleAd() {
   const { id } = useParams();
   const [announcement, setAnnouncement] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     const docRef = db.collection('announcements').doc(id);
@@ -35,11 +50,29 @@ export default function SingleAd() {
   }
 
   return (
-    <div>
-      <Title>{announcement.title}</Title>
+    <Container>
+      <Typography variant="h5">{announcement.title}</Typography>
       <Title>{announcement.descriptions}</Title>
       <p>{announcement.author}</p>
-      <Link to={`/showprofile/${announcement.author}`}>Idz do profilu</Link>
-    </div>
+      <ButtonContainer>
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={() => {
+            history.goBack();
+          }}
+        >
+          GO BACK
+        </Button>
+        <Button
+          variant="outlined"
+          size="small"
+          component={Link}
+          to={`/showprofile/${announcement.author}`}
+        >
+          Show contact details
+        </Button>
+      </ButtonContainer>
+    </Container>
   );
 }

@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
 import { useParams } from 'react-router';
+import styled from 'styled-components';
+import { Typography, Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
+
+const Container = styled.div`
+  background-color: #f2f3f4;
+  border: solid 1px #aaa;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+`;
 
 export default function ShowProfile() {
   const [profile, setProfile] = useState(null);
   const { profil } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     const docRef = db.collection('users').doc(profil);
@@ -26,10 +38,19 @@ export default function ShowProfile() {
   }, [profil]);
 
   return (
-    <div>
-      <h3>Informacje o autorze:</h3>
-      {profile && <p>{profile.userDescription}</p>}
+    <Container>
+      <Typography variant="h5">User info </Typography>
       {profile && <p>{profile.userName}</p>}
-    </div>
+      {profile && <p>{profile.userDescription}</p>}
+      <Button
+        variant="outlined"
+        size="small"
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        Go back
+      </Button>
+    </Container>
   );
 }
