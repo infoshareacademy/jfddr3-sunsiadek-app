@@ -10,6 +10,7 @@ import SingleAd from './views/SingleAd/SingleAd';
 
 import Profile from './views/Profile/Profile';
 import AddDescription from './views/AddDescription/AddDescription';
+import Charts from './components/Charts';
 
 const BASE_NAME = '/jfddr3-sunsiadek-app';
 
@@ -27,6 +28,7 @@ export default function App() {
           <PrivateRoute path="/profile" component={Profile} />
 
           <PrivateRoute exact path="/ad/:id" component={SingleAd} />
+          <PrivateRoute path="/msg" component={Charts} />
 
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
