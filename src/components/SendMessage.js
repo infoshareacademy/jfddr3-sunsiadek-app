@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { db, auth } from '../firebase-config';
 import firebase from 'firebase';
 import { Input, Button } from '@material-ui/core';
+import { useAuth } from '../context/AuthProvider';
 
 const SendMessage = () => {
   const [msg, setMsg] = useState('');
+  const { currentUser } = useAuth();
 
   async function sendMessage(e) {
     e.preventDefault();
@@ -13,6 +15,7 @@ const SendMessage = () => {
     await db.collection('messages').add({
       text: msg,
       photoURL,
+      author: currentUser.email,
       uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });

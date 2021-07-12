@@ -22,7 +22,7 @@ const Charts = () => {
         <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
       </Link>
       <div className="msgs">
-        {messages.map(({ id, text, photoURL, uid }) => (
+        {messages.map(({ id, text, photoURL, uid, author }) => (
           <div>
             <div
               key={id}
@@ -31,6 +31,7 @@ const Charts = () => {
               }`}
             >
               <img src={photoURL} alt="" />
+              <h6>{author}</h6>
               <p>{text}</p>
             </div>
           </div>
