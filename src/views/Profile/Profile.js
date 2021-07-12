@@ -67,8 +67,8 @@ function Profile() {
           </PhotoContainer>
           <AddDescriptionBtn />
           <StyledAnchor>Check your messages 📩</StyledAnchor>
-          <Link to="/">
-            <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <StyledAnchor> ⬅️ Go back to dashboard</StyledAnchor>
           </Link>
         </DescriptionArea>
       </StyledApplication>
