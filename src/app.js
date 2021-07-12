@@ -11,6 +11,7 @@ import ShowProfile from './views/ShowProfile/ShowProfile';
 
 import Profile from './views/Profile/Profile';
 import AddDescription from './views/AddDescription/AddDescription';
+import Messages from './components/Messages';
 
 const BASE_NAME = '/jfddr3-sunsiadek-app';
 
@@ -22,13 +23,13 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <PrivateRoute exact path="/post" component={AddingAds} />
-
           <PrivateRoute exact path="/editprofile" component={AddDescription} />
           <PrivateRoute exact path="/ad/:id" component={SingleAd} />
           <PrivateRoute path="/profile" component={Profile} />
-
           <PrivateRoute exact path="/ad/:id" component={SingleAd} />
+          <PrivateRoute path="/msg" component={Messages} />
           <PrivateRoute path="/showprofile/:profil" component={ShowProfile} />
+
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
       </AuthProvider>

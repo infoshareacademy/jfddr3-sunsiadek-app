@@ -66,7 +66,9 @@ function Profile() {
             </Button>
           </PhotoContainer>
           <AddDescriptionBtn />
-          <StyledAnchor>Check your messages 📩</StyledAnchor>
+          <Link to="/msg">
+            <StyledAnchor>Check your messages 📩</StyledAnchor>
+          </Link>
           <Link to="/">
             <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
           </Link>
