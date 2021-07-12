@@ -3,6 +3,7 @@ import { db, auth } from '../firebase-config';
 import SendMessage from './SendMessage';
 import { Link } from 'react-router-dom';
 import { StyledAnchor } from './AddAdBtn';
+import '../app.css';
 
 const Charts = () => {
   const scroll = useRef();
