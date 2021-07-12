@@ -67,7 +67,7 @@ export default function AddDescription() {
                 name="userName"
               ></input>
             </StyledDiv>
-            <div>
+            <StyledDiv>
               <label
                 style={{ color: '#2e4053', fontWeight: 500 }}
                 for="userDescription"
@@ -81,7 +81,7 @@ export default function AddDescription() {
                 id="userDescription"
                 name="userDescription"
               ></textarea>
-            </div>
+            </StyledDiv>
 
             <button onClick={handleSubmit}>Ready!</button>
           </form>

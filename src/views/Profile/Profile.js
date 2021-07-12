@@ -43,7 +43,7 @@ export const StyledAnchor = styled.a`
   border: 1px solid #2e4053;
   border-radius: 15px;
   margin: 10px 0 10px 0;
-  width: 50%;
+  width: auto;
   text-align: center;
 `;
 
@@ -66,8 +66,13 @@ function Profile() {
             </Button>
           </PhotoContainer>
           <AddDescriptionBtn />
-          <Link to="/msg">
-            <StyledAnchor>Check your messages 📩</StyledAnchor>
+
+          
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <StyledAnchor> ⬅️ Go back to dashboard</StyledAnchor>
+            </Link>
+          <Link to="/msg" style={{ textDecoration: 'none' }}>
+            <StyledAnchor> Forum 📩</StyledAnchor>
           </Link>
           <Link to="/">
             <StyledAnchor> ⬅️ go back to dashboard</StyledAnchor>
