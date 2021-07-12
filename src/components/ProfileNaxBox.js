@@ -6,12 +6,8 @@ import { useHistory } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const NavBox = styled.div`
-  width: 95%;
   background-color: #f2f3f4;
   margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;

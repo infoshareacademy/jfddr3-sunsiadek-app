@@ -1,6 +1,5 @@
 import React from 'react';
 import ButtonBases from '../../components/DashboardMenuButtons';
-import { NavigationBox } from '../../components/NavigationBox';
 import { Route } from 'react-router-dom';
 import Category from '../../components/Category';
 import { CATEGORIES } from '../../constants';
@@ -14,7 +13,6 @@ function Dashboard() {
   return (
     <StyledApplication>
       <div className="Dashboard">
-        <NavigationBox />
         <Route path="/other">
           <Category title="Other" categoryName={CATEGORIES.OTHER} />
         </Route>

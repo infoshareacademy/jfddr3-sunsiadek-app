@@ -17,7 +17,6 @@ const DescriptionArea = styled.div`
   height: 600px;
   margin: 10px;
   margin: 0 auto;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
@@ -53,7 +52,7 @@ function Profile() {
   return (
     <>
       <StyledApplication>
-        <ProfileNavBox />
+        {/* <ProfileNavBox /> */}
 
         <DescriptionArea>
           <PhotoContainer>
