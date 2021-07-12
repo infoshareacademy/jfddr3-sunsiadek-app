@@ -28,7 +28,7 @@ export default function App() {
           <PrivateRoute path="/profile" component={Profile} />
 
           <PrivateRoute exact path="/ad/:id" component={SingleAd} />
-          <PrivateRoute path="/msg" component={Charts} />
+          <PrivateRoute path="/msg" component={Messages} />
 
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
