@@ -65,7 +65,7 @@ export default function CustomizedMenus() {
       window.location.reload();
     } catch {
       setError('Nie udało się wylogować');
-      console.lgo(error);
+      console.log(error);
     }
   }
 
