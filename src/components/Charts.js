@@ -30,9 +30,11 @@ const Charts = () => {
                 uid === auth.currentUser.uid ? 'sent' : 'received'
               }`}
             >
-              <img src={photoURL} alt="" />
-              <h6>{author}</h6>
-              <p>{text}</p>
+              {/* <img src={photoURL} alt="" /> */}
+              <div>
+                <h6>{author}</h6>
+                <p>{text}</p>
+              </div>
             </div>
           </div>
         ))}
