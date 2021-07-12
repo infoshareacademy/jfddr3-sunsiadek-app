@@ -43,7 +43,7 @@ export const StyledAnchor = styled.a`
   border: 1px solid #2e4053;
   border-radius: 15px;
   margin: 10px 0 10px 0;
-  width: 50%;
+  width: auto;
   text-align: center;
 `;
 
