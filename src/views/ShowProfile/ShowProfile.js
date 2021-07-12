@@ -3,7 +3,7 @@ import { db } from '../../firebase-config';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
 import { Typography, Button } from '@material-ui/core';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   background-color: #f2f3f4;

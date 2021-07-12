@@ -1,6 +1,5 @@
 import { Button } from '@material-ui/core';
 import styled from 'styled-components';
-import { ProfileNavBox } from '../../components/ProfileNaxBox';
 import { Link } from 'react-router-dom';
 import { AddDescriptionBtn } from '../../components/AddDescriptionBtn';
 
